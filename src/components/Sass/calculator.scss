@@ -1,0 +1,91 @@
+
+$containerBoxBackgroundColor: #fff;
+$containerBoxBorderColor: 1px solid rgba(128, 128, 128, 0.257);
+$containerBoxBorderRadius: 5px;
+$containerBoxBoxShadow: 0 0 10px rgba(0, 0, 0, 0.1);
+$tableBackgroundColor: #f5f5f5;
+$formBackgroundColor: #f5f5f5;
+
+// Mixins Declaration Start
+
+
+@mixin submit-button{
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0 auto;
+  width: 88%;
+}
+
+.form-container,
+.payment-information{
+  margin: 40px 0;
+}
+.container-header{
+  padding: 8px 0;
+}
+/* Form Styles */
+form {
+  border: 1px solid #ddd; 
+  .input-field {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.257);
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    padding: 10px;
+    &:last-child{
+      border-bottom: none;
+    }
+
+    &:nth-child(even){
+     background-color: $tableBackgroundColor;
+    }
+    label {
+      font-weight: bold;
+      margin-right: 10px;
+      width: 100%;
+      margin-left: 50px;
+    }
+    button {
+      @include submit-button;
+    }
+  }
+}
+
+.interestslider {
+  position: relative; 
+  margin: -16px 0;
+  
+  input[type="range"] {
+      width: 74% !important;
+      position: relative;
+      right: 87px;
+  }
+  span {
+    position: absolute;
+    right: 28px; 
+    transform: translateX(-50%); 
+    display: block;
+    width: 40px; 
+    text-align: center;
+  }
+}
+
+.list-items{
+  display: flex !important;
+  flex-flow: row;
+  padding: 15px !important;
+
+  &:nth-child(even){
+      background-color: $tableBackgroundColor;
+  }
+  .item-label{
+    width: 40%;
+  }
+}
+
+

@@ -1,0 +1,121 @@
+.loan-container-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 50px;
+  padding: 0px 70px;
+  margin: 20px 4px;
+}
+
+.form-container,
+.payment-information {
+  flex: 1;
+  width: 100%;
+  padding: 40px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-container .container-innerBox,
+.payment-information .container-innerBox {
+  width: 100%;
+  padding: 40px 0px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+.form-container .container-header,
+.payment-information .container-header {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  margin-bottom: 40px;
+  border-radius: 5px 5px 0 0;
+}
+.form-container thead,
+.payment-information thead {
+  background-color: #f5f5f5;
+}
+.form-container th, .form-container td,
+.payment-information th,
+.payment-information td {
+  padding: 10px;
+  text-align: left;
+}
+.form-container th,
+.payment-information th {
+  font-weight: bold;
+}
+.form-container tr:nth-child(even),
+.payment-information tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+.form-container input[type=text],
+.payment-information input[type=text] {
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  margin-right: 50px;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-flow: column;
+}
+form .input-field {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+form .input-field:nth-child(even) {
+  background-color: #f5f5f5;
+}
+form .input-field label {
+  font-weight: bold;
+  margin-right: 10px;
+  width: 100%;
+  margin-left: 50px;
+}
+form .input-field input[type=text],
+form .input-field select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  margin-inline-start: -25px;
+}
+form .input-field button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0 auto;
+  width: 88%;
+}
+
+.interestslider {
+  position: relative;
+  margin: -16px 0;
+}
+.interestslider input[type=range] {
+  width: 74% !important;
+  position: relative;
+  right: 87px;
+}
+.interestslider span {
+  position: absolute;
+  right: 28px;
+  transform: translateX(-50%);
+  display: block;
+  width: 40px;
+  text-align: center;
+}/*# sourceMappingURL=calculator.css.map */

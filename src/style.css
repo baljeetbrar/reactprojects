@@ -1,0 +1,141 @@
+
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.container_box{
+    width: 90%;
+}
+.main_navbar{
+    background-color: burlywood;
+}
+.navbar_list{
+    list-style-type: none;
+    display: flex;
+    gap: 0px 20px;
+    margin: 0;
+    
+}
+.navbar_list>li{
+    padding: 15px 35px;
+}
+.navbar_list>li:hover{
+    cursor: pointer;
+    scale: 1.1;
+}
+.navbar_list>li>a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+}
+
+
+/* *********** Body CSS START**********  */
+
+.body_img{
+    width: 50%;
+    height: 500px;
+}
+
+/* *********** Body CSS END**********  */
+
+
+/* ********* Footer CSS START***********  */
+
+.footer_wrapper {
+    background-color: #9b885e;
+    color: #333;    
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Style the footer columns */
+.footer-column {
+    flex: 1;
+    margin-right: 20px;
+}
+
+/* Style the headings in the footer */
+.footer-column h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.footer_list{
+    margin: 0;
+    padding: 0px 18px;
+}
+.footer_list>li{
+    padding: 2px 0;
+}
+.footer_list>li>a{
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+}
+/* Style the newsletter form */
+/* form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 15px 0;
+}
+
+form button:hover {
+    background-color: #0056b3;
+} */
+
+/* ********* Footer CSS END***********  */
+
+
+
+/******** Contact Form Css Start *******  */
+/* legend{
+    text-align: center;
+    font-size: 2rem;
+    padding: 0 25px;
+}
+.contact_form input,label{
+    display: block;
+    width: 90%;
+    margin: 10px 0;
+    
+}
+
+.contact_form section{
+    width: 50%;
+    float: left;
+}
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.input-group div {
+    flex: 1;
+    margin-right: 10px;
+}
+.form_message{
+    width: 95%;
+}
+.contact_form input:focus,
+.contact_form textarea:focus{
+    outline: 1px solid burlywood;
+    border: 1px solid burlywood;  
+    caret-color: burlywood;
+} */

@@ -1,0 +1,124 @@
+$primaryColor: #007bff;
+$borderColor: #ccc;
+$containerPadding: 0 70px;
+
+// Mixin for buttons with common styles
+@mixin top-button{
+    background-color: rgb(0, 191, 255) !important;
+    color: black;
+    border: 1px solid blue;
+    border-radius: 50%;
+    width: 145px;
+    height: 45px;
+}
+// Mixin for common flex container styles
+@mixin flex-container{
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    width: 100%;
+}
+// Mixin for common flex Vertical container styles
+
+@mixin flex-vertical {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.font-bold{
+    font-weight: 800;
+}
+.capitalize-font{
+    text-transform: capitalize;
+}
+
+// Apply Css Start
+
+/* TopCities Component */
+.top-cities-wrapper{
+    margin: 0;
+    padding: 0;
+    height: 60px;
+    margin-bottom: 8px;
+
+}
+.top-cities-buttons{
+    @include top-button;
+}
+
+.flex-container{
+    @include flex-container;
+}
+.weather-app-wrapper{
+    width: 900px;
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid black;
+    background-color: antiquewhite;
+}
+.inputs-elements,
+.temp-details{
+    justify-content: space-around !important;
+    margin: 0 25px;
+}
+
+.input-search-bar{
+    outline: none;
+    border: none;
+    width: 450px;
+    height: 40px;
+    padding: 0 20px;
+    
+}
+.temp-button{
+    outline: none;
+    border: none;
+    padding: 6px 12px;
+}
+.location-icon,
+.temp-span{
+    padding: 0 10px;
+}
+.date-time{
+    padding: 5px 0;
+    text-align: center;
+    span{
+        padding: 0 6px;
+    }
+}
+.temprature-wrapper{
+    position: relative;
+}
+.temp-header{
+    vertical-align: middle;
+    margin: 30px 0;
+}
+.flex-vertical {
+    @include flex-vertical;
+    p{
+        margin: 2px 0;
+    }
+    
+  }
+.sunrise-wrapper{
+    gap: 0 20px;
+    
+}
+
+/* Forecast Component */
+.forecast-wrapper {
+    text-align: left;
+    width: 100%;
+    padding: 0 70px 18px;
+  
+}
+.forecast-time {
+    @include flex-container;
+    justify-content: space-between !important;
+  
+    p > img {
+      width: 30px;
+    }
+  }
