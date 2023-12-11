@@ -1,10 +1,10 @@
 import React from 'react';
-import { useData } from '../ApiHandler/ApiHandler';
+import { useApiData } from '../ApiHandler/ApiDataContext';
 import NewsData from './NewsData';
 import { Container, Row, Col } from 'react-bootstrap';
 
 const NewsList = () => {
-  const { newsApiData, newsApiLoading, newsApiError } = useData();
+  const { newsApiData, newsApiLoading, newsApiError } = useApiData();
 
   if (newsApiLoading) {
     return <p>Loading......</p>;
@@ -17,7 +17,7 @@ const NewsList = () => {
     <Container fluid>
     <Row className='justify-content-md-center'>
       {newsApiData.map((data, index) => (
-        <Col key={data.id || index} md={3} sm={4} xs={6} className='mb-4'>
+        <Col key={data.id || index} md={4} xs={6} className='mb-4'>
           <NewsData article={data} />
         </Col>
       ))}

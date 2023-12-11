@@ -57,3 +57,55 @@
   a:hover {
     text-decoration: underline;
   }
+
+  .countries-list{
+    gap: 20px;
+  }
+
+ //Search Form Css Start
+
+  .searchquery-wrapper {
+    position: relative; 
+  }
+  
+  .search-box-form {  
+    position: relative;
+    border: none;
+  }
+
+  .search-box{
+    margin-top: 7px;
+    height: 45px;
+    outline: none;
+    padding: 8px;
+    &:focus{
+      
+      outline: none !important;
+    }
+  }
+
+  .suggestion-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    list-style: none;
+    padding: 8px;
+    margin: 0;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    z-index: 1;
+  
+    li {
+      padding: 8px;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: #f1f1f1;
+      }
+    }
+  }
+  .searchquery-wrapper:hover .suggestion-list {
+    display: block;
+  }

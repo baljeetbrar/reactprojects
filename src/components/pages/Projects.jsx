@@ -9,7 +9,7 @@ const Projects = () => {
    <ul>
       <li><Link to="/newsweb">News Api</Link></li>
       <li><Link to="/loan">Loan Calculator</Link></li>
-      <li><Link to="/weatherapp">Weather App</Link></li>
+      <li><Link to="/weatherforecast">Weather App</Link></li>
    </ul>
     
    </>

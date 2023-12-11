@@ -12,7 +12,7 @@ const Forecast = ( {title,} ) => {
                 <div className='flex-vertical'>
                     <p>01:00PM</p>
                     <p>
-                        <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="" />
+                        <img src="" alt="" />
                     </p>
                     <p>19°</p>
                 </div>

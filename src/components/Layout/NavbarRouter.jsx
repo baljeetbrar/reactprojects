@@ -11,20 +11,14 @@ import Nopage from '../pages/Nopage'
 import About from '../pages/About'
 import Loan from '../LoanCalculator/Loan'
 import NewsWeb from '../NewsApi/NewsWeb'
-
-
-
-
-
+import WeatherForecast from '../WeatherForecast/WeatherForecast';
 
 const NavbarRouter = () => {
   return (
     <>
      
       <HashRouter>
-    
         <NavbarLink />
-    
         <div className='content'>
           <Routes>
             <Route index element={<Home />} />
@@ -34,6 +28,8 @@ const NavbarRouter = () => {
             <Route path='*' element={<Nopage />} />
             <Route path='/loan' element={<Loan />} />
             <Route path='/newsweb' element={<NewsWeb />} />
+            <Route path='/weatherforecast' element={<WeatherForecast />} />
+            
           </Routes>
         </div>
       </HashRouter>
