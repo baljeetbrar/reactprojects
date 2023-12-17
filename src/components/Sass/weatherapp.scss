@@ -1,0 +1,91 @@
+@import 'typography';
+
+/* TopCities Component */
+
+.top-cities-wrapper{
+    margin: 0;
+    padding: 0;
+    padding-top: 25px;
+    padding-bottom: 10px;
+}
+.top-cities-buttons{
+    border-radius: 5px;
+    width: 145px;
+    height: 45px;
+    color: white;
+    background-color: $secondary !important;
+    border: none;
+    outline: none;
+}
+
+.weather-app-wrapper{  
+    margin: 0 auto;
+    border: 1px solid rgba(182, 182, 179, 0.568);
+    background-color: #e0d8ce;
+    box-shadow: #9e9e9e 0px 0px 31px 0.1px !important;
+}
+
+.input-search-bar{
+    outline: none;
+    color: $secondary;
+    border: 1px solid $secondary;
+    width: 500px;
+    height: 40px;
+    padding: 0 20px;
+}
+.temp-button{
+    outline: none;
+    border: none;
+    padding: 6px 12px;
+    color: white;
+    background-color: $secondary !important;
+
+    &:active,
+    &:focus{
+        background-color: #ff8e00 !important;
+    }
+}
+
+// Time And Location Page...
+.date-time{
+    padding: 5px 0;
+    text-align: center;
+    span{
+        padding: 0 6px;
+    }
+}
+
+// Time And Location Page...
+
+
+//Temprature and Details page Start.....
+.temprature-wrapper{
+    position: relative;
+}
+.temp-header{
+    vertical-align: middle;
+    margin: 30px 0;
+}
+
+.sun-info-head{
+    padding: 0 10px;
+}
+.sunrise-wrapper{
+    margin: 30px 0;
+}
+/* Forecast Component */
+.forecast-wrapper {
+    text-align: left;
+    width: 100%;
+    padding: 0 70px 18px;
+    
+}
+.forecast-time {
+    
+    justify-content: space-between !important;
+    
+    p > img {
+        width: 30px;
+    }
+}
+//Temprature and Details page End.....

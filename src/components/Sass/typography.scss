@@ -1,0 +1,55 @@
+$primary: #DEB786;;
+$secondary: #95672D;
+
+$bg-blue: #007bff;
+$bg-green : #55E6A5;
+
+$bg-navy : #09101A;
+
+$bg-gray: #09101ad1;
+
+a{
+    text-decoration: none !important;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.text-left{
+    text-align: left;
+}
+
+.text-center{
+    text-align: center;
+}
+.text-right{
+    text-align: right;
+}
+.text-bold{
+    font-weight: 800;
+}
+.bg-blue{
+    color: white;
+    background-color: $bg-blue;
+}
+.uppercase{
+    text-transform: uppercase;
+}
+.text-green{
+    color: $bg-green;
+}
+.bg-green{
+    color: white;
+    background-color: $bg-green;
+}
+.bg-navy{
+    background-color: $bg-navy;
+}
+.full-width{
+    width: 100%;
+}
+
+.container-padding{
+    padding: 0 9.5% !important;
+}
