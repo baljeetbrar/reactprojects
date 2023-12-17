@@ -12,6 +12,10 @@ const NewsList = () => {
   if (newsApiError) {
     return <p>Error: {newsApiError.message}</p>;
   }
+   // Check if newsApiData is defined and is an array
+  if (!newsApiData || !Array.isArray(newsApiData)) {
+    return <p>No data available.</p>;
+  }
 
   return (
     <Container fluid>
