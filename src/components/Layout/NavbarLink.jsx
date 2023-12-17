@@ -14,7 +14,7 @@ const NavbarLink = () => {
         <Link to='/projects' className='nav-list-item'>
           <strong className='nav-name'>Projects</strong>
         </Link>
-        <Link to='/projects' className='nav-list-item'>
+        <Link to='/contact' className='nav-list-item'>
           <strong className='nav-name'>Contact</strong>
         </Link>
       </Nav>

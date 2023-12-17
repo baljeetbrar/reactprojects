@@ -1,20 +1,22 @@
 import React, { useContext, useEffect, useState } from "react";
-import ApiDataContext from "../ApiHandler/ApiDataContext";
-
-import WeatherForecast from "./WeatherForecast";
-import WeatherApi from "./WeatherAPi";
+import {WeatherDataContext} from "../ApiHandler/ApiDataContext";
 import TopCities from "./TopCities";
 import Inputs from "./Inputs";
 import Forecast from "./Forecast";
 import TimeAndLocation from "./TimeAndLocation";
 import TempratureAndDetails from "./TempratureAndDetails";
+import {format} from 'date-fns';
+import { DateTime } from 'luxon';
+
 
 const WeatherGetData = () => {
-  const { weatherData } = useContext(ApiDataContext);
+  const { weatherData, oneCallData, hourlyData, dailyData } = useContext(WeatherDataContext);
   const [formattedData, setFormattedData] = useState("");
-  const city = "canada";
-
+  
   const formattedWeatherData = (weatherDetails) => {
+    if (!weatherDetails) {
+      return null; // or handle it in a way that makes sense for your application
+    }
     const {
       coord: { lat, lon },
       main: { temp, feels_like, temp_min, temp_max, humidity },
@@ -22,7 +24,30 @@ const WeatherGetData = () => {
       sys: { country, sunrise, sunset },
       weather: [{ main: details, description, icon }],
       wind: { speed },
+      dt,
+      timezone,
     } = weatherDetails;
+
+    const timestampInSeconds = dt + timezone;
+    const formatDate = new Date(timestampInSeconds * 1000);
+    const formattedPublishedAt = format(
+      formatDate,
+      "MMMM dd, yyyy 'at' h:mm a",
+      {
+        timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      }
+    );
+
+    const formattedSunrise = DateTime.fromSeconds(sunrise)
+      .setZone(timezone)
+      .toLocaleString(DateTime.TIME_SIMPLE);
+    const formattedSunset = DateTime.fromSeconds(sunset)
+      .setZone(timezone)
+      .toLocaleString(DateTime.TIME_SIMPLE);
+
+    const localTime = DateTime.fromSeconds(dt)
+      .setZone(timezone)
+      .toLocaleString(DateTime.DATETIME_SHORT);
 
     return {
       latitude: lat,
@@ -34,32 +59,33 @@ const WeatherGetData = () => {
       humidity,
       cityName: name,
       country,
-      sunriseTime: sunrise,
-      sunsetTime: sunset,
+      sunriseTime: formattedSunrise,
+      sunsetTime: formattedSunset,
       weatherDetails: details,
       weatherDescription: description,
       weatherIcon: icon,
       windSpeed: speed,
+      formattedPublishedAt,
     };
   };
-
   useEffect(() => {
     const data = formattedWeatherData(weatherData);
     setFormattedData(data);
-    console.log("my data", data);
-  });
+  },[weatherData]);
+
 
   return (
     <>
       <div className="flex-container ">
         {formattedData && (
           <>
-            <TopCities />
-            <Inputs />
-            <TimeAndLocation {...formattedData} />
-            <TempratureAndDetails />
-            <Forecast title="Hourly Forecast" />
-            <Forecast title="Daily Forecast" />
+            <TopCities {...formattedData}/>
+            <Inputs {...formattedData}/>
+            <TimeAndLocation {...formattedData}/>
+            <TempratureAndDetails {...formattedData}/>
+            <Forecast title="Hourly Forecast" forecastData={hourlyData} {...formattedData}/>
+            <Forecast title="Daily Forecast" forecastData={dailyData} {...formattedData}/>
+            
           </>
         )}
       </div>

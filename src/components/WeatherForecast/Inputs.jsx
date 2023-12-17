@@ -1,44 +1,63 @@
-import React, {useEffect, useState}from 'react';
-import { CiSearch } from "react-icons/ci";
-import { IoLocationOutline } from "react-icons/io5";  
+import React, {useContext, useEffect, useState}from 'react';
+import {Row, Col} from 'react-bootstrap';
+import { WeatherDataContext } from '../ApiHandler/ApiDataContext';
 
 const Inputs = () => {
+  const {updateUnitType,updateCity} = useContext(WeatherDataContext);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearchQuery =(search) =>{
+      setSearchQuery(search.target.value);
+  }
+
+  const handleSearchSubmit = (search) =>{
+      search.preventDefault();
+      updateCity(searchQuery);
+      setSearchQuery('');
+  }
+
+  const handleTempUnitChange = (unitType) => {
+    updateUnitType(unitType);
+    console.log(`Data updated in ${unitType} unit`)
+  };
  
   return (
     <>
-      <div className='inputs-elements flex-container'>
-          <div className='search-bar'>
-            <input 
-                type="search" 
-                className='input-search-bar'
-                placeholder='Search for city......'
-                id='searchbar'
-                name='searchbar'
-                
-            />
-          </div>
-          <div className='location-finder'>
-                <span className='search-icon' >
-                  <CiSearch />
-                </span> 
-                <span className='location-icon' >
-                  <IoLocationOutline />
-                </span>
-
-          </div>
-                <div className='temp-change'>
-                <button
-                    className='temp-button' >
+      <Row className='inputs-elements justify-content-center container-padding'>
+        <Col>
+          <form className="search-bar" onSubmit={handleSearchSubmit}>
+              <input
+                type="search"
+                className="input-search-bar"
+                placeholder="Search for city......"
+                id="searchbar"
+                name="searchbar"
+                value={searchQuery}
+                onChange={handleSearchQuery}
+              />
+            </form>
+        </Col>
+        <Col>
+            <div className='temp-change'>
+                <button active
+                    className='temp-button'
+                    onClick={() => handleTempUnitChange('metric')}
+                    >
                     °C
                   </button>
                   <span className="temp-span">|</span>
                   <button
-                    className='temp-button'>
+                    className='temp-button'
+                    onClick={() => handleTempUnitChange('imperial')}
+                  >
                     °F
                   </button>
-
-                </div>
-      </div>
+              </div>
+        </Col>
+        
+         
+                
+      </Row>
     </>
   )
 }

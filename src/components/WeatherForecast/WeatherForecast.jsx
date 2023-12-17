@@ -1,12 +1,12 @@
 import React from "react";
-
+import {Container} from 'react-bootstrap'
 import WeatherGetData from "./WeatherGetData";
 
 const WeatherForecast = () => {
   return (
-    <div className="flex-container  weather-app-wrapper">
-      <WeatherGetData />
-    </div>
+    <Container className=" weather-app-wrapper">
+       <WeatherGetData />
+    </Container>
   );
 };
 

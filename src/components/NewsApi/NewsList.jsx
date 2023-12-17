@@ -1,10 +1,10 @@
 import React from 'react';
-import { useApiData } from '../ApiHandler/ApiDataContext';
+import { NewsDataHandler } from '../ApiHandler/ApiDataContext';
 import NewsData from './NewsData';
 import { Container, Row, Col } from 'react-bootstrap';
 
 const NewsList = () => {
-  const { newsApiData, newsApiLoading, newsApiError } = useApiData();
+  const { newsApiData, newsApiLoading, newsApiError } = NewsDataHandler();
 
   if (newsApiLoading) {
     return <p>Loading......</p>;

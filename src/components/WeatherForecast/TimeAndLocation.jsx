@@ -1,16 +1,17 @@
-import React from 'react'
+import React from 'react';
+import {Row, Col} from 'react-bootstrap'
 
-const TimeAndLocation = ({ cityName, country, timestamp }) => {
+const TimeAndLocation = ({ cityName, country, formattedPublishedAt, timezoneOffset }) => {
   return (
     <>
-      <div className='localtime-information'>
+      <Row className='localtime-information justify-content-center'>
         <div className='date-time'>
-          <span>{`${timestamp}`}</span>,
+          <span>{formattedPublishedAt}</span>,
         </div>
         <div className='date-time'>
-          <h2 className='font-bold'>{`${cityName}, ${country}`}</h2>
+          <h2 className='text-bold'>{`${cityName}, ${country}`}</h2>
         </div>
-      </div>
+      </Row>
     </>
   );
 };

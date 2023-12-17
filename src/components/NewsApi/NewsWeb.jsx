@@ -1,13 +1,13 @@
 import React,{useState} from 'react'
 import NewsList from './NewsList'
-import { useApiData } from '../ApiHandler/ApiDataContext';
+import { NewsDataHandler } from '../ApiHandler/ApiDataContext';
 import { Countries, Categories, searchCountry ,filterCountriesByName} from '../NewsApi/NewsCountries';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
 const NewsWeb = () => {
   const [outputCountry, setOutputCountry] = useState(' ');
   const [showSuggestions, setShowSuggestions] = useState(false); 
-  const { newsApiLoading, updateCountryCode, updateCategory } = useApiData();
+  const { newsApiLoading, updateCountryCode, updateCategory } = NewsDataHandler();
 
   const selectedCountries = [
     { countryCode: 'us', countryName: 'United States' },

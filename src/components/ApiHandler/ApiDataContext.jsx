@@ -1,9 +1,14 @@
 import { createContext, useContext } from 'react';
 
-const ApiDataContext = createContext();
+const WeatherDataContext = createContext();
+const NewsDataContext = createContext();
 
-export const useApiData = () => {
-  return useContext(ApiDataContext);
+export const WeatherApiData = () => {
+  return useContext(WeatherDataContext);
 };
 
-export default ApiDataContext;
+export const NewsDataHandler = () =>{
+  return useContext(NewsDataContext);
+}
+
+export { WeatherDataContext, NewsDataContext};
