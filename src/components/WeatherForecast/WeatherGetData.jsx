@@ -5,12 +5,9 @@ import Inputs from "./Inputs";
 import Forecast from "./Forecast";
 import TimeAndLocation from "./TimeAndLocation";
 import TempratureAndDetails from "./TempratureAndDetails";
-import {format} from 'date-fns';
-import { DateTime } from 'luxon';
-
 
 const WeatherGetData = () => {
-  const { weatherData, oneCallData, hourlyData, dailyData } = useContext(WeatherDataContext);
+  const { weatherData, hourlyData, dailyData } = useContext(WeatherDataContext);
   const [formattedData, setFormattedData] = useState("");
   
   const formattedWeatherData = (weatherDetails) => {
@@ -29,25 +26,20 @@ const WeatherGetData = () => {
     } = weatherDetails;
 
     const timestampInSeconds = dt + timezone;
-    const formatDate = new Date(timestampInSeconds * 1000);
-    const formattedPublishedAt = format(
-      formatDate,
-      "MMMM dd, yyyy 'at' h:mm a",
-      {
-        timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-      }
-    );
+    const dateObj = new Date(timestampInSeconds * 1000);
+    const formattedPublishedAt = dateObj.toUTCString();
+    
+    const sunriseTimeInSec = sunrise + timezone;
+    const sunriseObj = new Date(sunriseTimeInSec * 1000);
+    const sunriseUtcTime = sunriseObj.toUTCString();
+    const sunriseDate = new Date(sunriseUtcTime); 
+    const formattedSunrise = sunriseDate.toISOString().split("T")[1].split(".")[0];
 
-    const formattedSunrise = DateTime.fromSeconds(sunrise)
-      .setZone(timezone)
-      .toLocaleString(DateTime.TIME_SIMPLE);
-    const formattedSunset = DateTime.fromSeconds(sunset)
-      .setZone(timezone)
-      .toLocaleString(DateTime.TIME_SIMPLE);
-
-    const localTime = DateTime.fromSeconds(dt)
-      .setZone(timezone)
-      .toLocaleString(DateTime.DATETIME_SHORT);
+    const sunsetTimeInSec = sunset + timezone;
+    const sunsetObj = new Date(sunsetTimeInSec * 1000);
+    const  sunsetUtcTime = sunsetObj.toUTCString();
+    const sunsetDate = new Date(sunsetUtcTime); 
+    const formattedSunset = sunsetDate.toISOString().split("T")[1].split(".")[0];
 
     return {
       latitude: lat,
@@ -68,6 +60,7 @@ const WeatherGetData = () => {
       formattedPublishedAt,
     };
   };
+
   useEffect(() => {
     const data = formattedWeatherData(weatherData);
     setFormattedData(data);

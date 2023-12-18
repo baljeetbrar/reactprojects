@@ -18,6 +18,8 @@ const TempratureAndDetails = ({
   maxTemperature,
   weatherIcon,
 }) => {
+
+
   return (
     <>
     <Container className="text-center">
