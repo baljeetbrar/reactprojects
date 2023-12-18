@@ -26,6 +26,7 @@ const NewsApiHandler = ({children}) => {
       useEffect(() => {
         fetchNewsApiData();
         console.log(`Showing News API Data for ${countryCode} and with ${newsCategory} category`);
+        console.log('NewApi Data:', newsApiData);
       }, [countryCode, newsCategory]);
 
       const updateCountryCode = (newCountryCode) => {

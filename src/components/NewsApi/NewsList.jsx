@@ -12,15 +12,16 @@ const NewsList = () => {
   if (newsApiError) {
     return <p>Error: {newsApiError.message}</p>;
   }
+
   return (
     <Container fluid>
-    <Row className='justify-content-md-center'>
+    {/* <Row className='justify-content-md-center'>
       {newsApiData.map((data, index) => (
         <Col key={data.id || index} md={4} xs={6} className='mb-4'>
           <NewsData article={data} />
         </Col>
       ))}
-    </Row>
+    </Row> */}
   </Container>
   );
 };
