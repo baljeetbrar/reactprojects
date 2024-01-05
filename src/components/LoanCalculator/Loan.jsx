@@ -9,6 +9,7 @@ const LoanCalculator =() => {
 	const [interestRange, setInterestRange] = useState(5);
 	const [timeRange, setTimeRange] = useState(2);
 	const [finalAmount, setFinalAmount] = useState("");
+	const [submitbtn, setSubmitBtn] = useState();
 
 	useEffect(()=>{
 		if(finalAmount && timeRange){
@@ -47,11 +48,13 @@ const handleSubmit =(e)=>{
 	paymentCalculator();
 }
 
-
+const handleOnClick = () => {
+	setSubmitBtn(!submitbtn);
+}
 	return (
 		<Container>
 			<Row className="d-flex flex-row">
-				<Col>
+				<Col md={6} xs={12}>
 					<div className="form-container">
 						<div className="info-head container-header text-center bg-blue">
 							<h2 className="text-bold">Loan Calculator</h2>
@@ -101,13 +104,17 @@ const handleSubmit =(e)=>{
 									<option value="7">7</option>
 								</Form.Control>
 							</Form.Group>
+								<Form.Group className="input-field">
+								<button onClick={handleOnClick}>Check Button</button>
+								</Form.Group>
+							
 							<Form.Group className="input-field">
-								<button>Submit</button>
+								<button >Submit</button>
 							</Form.Group>
 						</Form>
 					</div>
 				</Col>
-				<Col>
+				<Col md={6} xs={12}>
 					<div className="payment-information">
 						<div className="info-head container-header text-center bg-blue">
 						<h2 className="text-bold">Payment Information</h2>
