@@ -1,3 +1,13 @@
-@media screen  and (max-width: 300px){
+@media screen  and (max-width: 991px){
+    .cal-label {
+        font-size: 13px;
+    }
+    .interestslider input[type=range]{
+        right : 42px;
+       
+    }
+    .interestslider span{
+        right: -6px;
+    }
     
 }

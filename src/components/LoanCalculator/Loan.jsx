@@ -61,7 +61,7 @@ const handleOnClick = () => {
 						</div>
 						<Form action="" onSubmit={handleSubmit} className="loan-form-wrapper ">
 							<Form.Group className="input-field" controlId="payment">
-							<Form.Label htmlFor="payment">Loan Amount :</Form.Label>
+							<Form.Label htmlFor="payment" className="cal-label">Loan Amount :</Form.Label>
 								<Form.Control 
 									type="text" 
 									id="payment" 
@@ -72,7 +72,7 @@ const handleOnClick = () => {
 								/>
 							</Form.Group>
 							<Form.Group className="input-field interestslider" controlId="interest">
-								<Form.Label htmlFor="interest">Interest Rate(%):</Form.Label>
+								<Form.Label htmlFor="interest" className="cal-label">Interest Rate(%):</Form.Label>
 									<Form.Range 
 										type="range" 
 										id="interest"
@@ -94,7 +94,7 @@ const handleOnClick = () => {
 								<span>{interestRange}%</span>
 							</Form.Group>
 							<Form.Group className="input-field" controlId="duration">
-								<Form.Label htmlFor="duration">Number of Years:</Form.Label>
+								<Form.Label htmlFor="duration" className="cal-label">Number of Years:</Form.Label>
 								<Form.Control as="select" id="duration" name="duration" value={timeRange} onChange={handleTimeRange}>
 									<option value="2">2</option>
 									<option value="3">3</option>
@@ -117,23 +117,23 @@ const handleOnClick = () => {
 				<Col md={6} xs={12}>
 					<div className="payment-information">
 						<div className="info-head container-header text-center bg-blue">
-						<h2 className="text-bold">Payment Information</h2>
+						<h2 className="text-bold" >Payment Information</h2>
 						</div>
 						<ListGroup className="payCal container-innerBox d-flex">
 						<ListGroup.Item className="list-items">
-							<strong className="item-label">Final Full Payment :</strong>
+							<strong className="item-label cal-label">Final Full Payment :</strong>
 							<Form.Control id="finalPayment" name="finalPayment" type="text" value={finalAmount} readOnly />
 						</ListGroup.Item>
 						<ListGroup.Item className="list-items">
-							<strong className="item-label">Monthly Payment :</strong>
+							<strong className="item-label cal-label">Monthly Payment :</strong>
 							<Form.Control id="monthlyPayment" name="monthlyPayment" type="text" value={monthlyPayment} readOnly />
 						</ListGroup.Item>
 						<ListGroup.Item className="list-items"> 
-							<strong className="item-label">Bi-Weekly Payment :</strong>
+							<strong className="item-label cal-label">Bi-Weekly Payment :</strong>
 							<Form.Control id="biWeeklyPayment" name="biWeeklyPayment" type="text" value={biWeeklyPayment} readOnly />
 						</ListGroup.Item>
 						<ListGroup.Item className="list-items">
-							<strong className="item-label">Weekly Payment :</strong>
+							<strong className="item-label cal-label">Weekly Payment :</strong>
 							<Form.Control id="weeklyPayment" name="weeklyPayment" type="text" value={weeklyPayment} readOnly />
 						</ListGroup.Item>
 						</ListGroup>

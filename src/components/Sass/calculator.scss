@@ -44,7 +44,7 @@ form {
     &:nth-child(even){
      background-color: $tableBackgroundColor;
     }
-    label {
+    .cal-label {
       font-weight: bold;
       margin-right: 10px;
       width: 100%;
@@ -63,11 +63,11 @@ form {
   input[type="range"] {
       width: 74% !important;
       position: relative;
-      right: 87px;
+      right: 48px;
   }
   span {
     position: absolute;
-    right: 28px; 
+    right: -4px; 
     transform: translateX(-50%); 
     display: block;
     width: 40px; 
